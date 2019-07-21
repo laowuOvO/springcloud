@@ -1,0 +1,13 @@
+server:
+  port: 7002
+
+eureka:
+#  server:
+#    enable-self-preservation: false #禁用自我保护  不推荐 部署时别配置
+  instance:
+    hostname: peer2
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://peer1:7001/eureka

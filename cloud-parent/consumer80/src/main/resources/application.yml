@@ -1,0 +1,32 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consumer
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true #ribbon 开启重试机制 默认好像也是true
+#ribbon相关
+
+ribbon:
+   ConnectTimeout: 250 #请求连接的超时时间
+   ReadTimeOut: 1000  #请求处理的超时时间
+   OkToRetryOnAllOperations: true #对所有请求都重试 todo 注意！ 所有请求一定要研究一下
+   MaxAutoRetriesNextServer: 2 #切换实例的重试次数
+   MaxAutoRetries: 1 #对当前实例的重试次数
+
+
+
+eureka:
+  client:
+    register-with-eureka: true #消费者注册  zuul测试使用
+    service-url:
+      defaultZone: http://peer1:7001/eureka,http://peer2:7002/eureka
+
+
+
+
+
+

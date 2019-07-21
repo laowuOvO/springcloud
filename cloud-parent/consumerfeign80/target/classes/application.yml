@@ -1,0 +1,39 @@
+server:
+  port: 80
+spring:
+  application:
+    name: consumerfeign
+
+#在配置hystrix之前，一定要开启feign对hystrix的支持
+feign:
+  hystrix:
+     enabled: true
+
+dept:
+  ribbon:
+    #配置首台服务器重试1次
+    MaxAutoRetries: 1
+    #配置其他服务器重试两次
+    MaxAutoRetriesNextServer: 2
+    #链接超时时间
+    ConnectTimeout: 500
+    #请求处理时间
+    ReadTimeout: 1000
+    #每个操作都开启重试机制
+    OkToRetryOnAllOperations: true
+
+#配置断路器超时时间，默认是1000（1秒） 断路器的超时时间必须大于重试 否则直接就走fallback了
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+
+eureka:
+  client:
+    register-with-eureka: true #测试zuul 注册成服务 本来只是单纯的消费者
+    service-url:
+      defaultZone: http://peer1:7001/eureka,http://peer2:7002/eureka
+

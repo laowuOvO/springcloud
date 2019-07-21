@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="consumer80" />
+        <module name="consumerfeign80" />
+        <module name="eurekaclient8001" />
+        <module name="eurekaclient8002" />
+        <module name="eurekaserver7001" />
+        <module name="eurekaserver7002" />
+        <module name="gatewayzuul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api" target="1.8" />
+      <module name="cloud-parent" target="1.8" />
+      <module name="consumer80" target="1.8" />
+      <module name="consumerfeign80" target="1.8" />
+      <module name="eurekaclient8001" target="1.8" />
+      <module name="eurekaclient8002" target="1.8" />
+      <module name="eurekaserver7001" target="1.8" />
+      <module name="eurekaserver7002" target="1.8" />
+      <module name="gatewayzuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

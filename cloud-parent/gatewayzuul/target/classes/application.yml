@@ -1,0 +1,23 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: api-gateway
+
+zuul:
+  routes:
+    api-feign:
+      path: /consumerfeign/**
+      serviceId: consumerfeign  #分别测试访问feign 和 8001服务
+    api-consumer:
+      path: /consumer/**  #注意 **代表的是访问路径 自动映射到 dept 微服务的 controller上
+      serviceId: dept
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://peer1:7001/eureka,http://peer2:7002/eureka
+
+
