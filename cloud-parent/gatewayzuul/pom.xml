@@ -11,7 +11,7 @@
 
     <artifactId>gateway-zuul</artifactId>
 
-    <dependencies>
+    <dependencies> 
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
